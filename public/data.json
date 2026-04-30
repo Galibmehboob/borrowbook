@@ -6,7 +6,7 @@
     "description": "A mysterious journey through an ancient forest filled with hidden secrets and forgotten legends.",
     "category": "Story",
     "available_quantity": 14,
-    "image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+    "image_url": "https://example.com/images/silent-forest.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "A practical guide to modern JavaScript development with real-world examples and projects.",
     "category": "Tech",
     "available_quantity": 9,
-    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475"
+    "image_url": "https://example.com/images/mastering-javascript.jpg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "description": "An exploration of galaxies, black holes, and the mysteries of the universe.",
     "category": "Science",
     "available_quantity": 11,
-    "image_url": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+    "image_url": "https://example.com/images/beyond-the-stars.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "description": "A young hero discovers an ancient kingdom hidden beneath the mountains.",
     "category": "Story",
     "available_quantity": 7,
-    "image_url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca"
+    "image_url": "https://example.com/images/lost-kingdom.jpg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "description": "Learn how to build fast and scalable web applications using React and modern tools.",
     "category": "Tech",
     "available_quantity": 13,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+    "image_url": "https://example.com/images/react-in-action.jpg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "description": "An introduction to quantum physics explained in a simple and engaging way.",
     "category": "Science",
     "available_quantity": 5,
-    "image_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb"
+    "image_url": "https://example.com/images/quantum-wonders.jpg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "description": "A suspenseful tale of secrets, betrayal, and unexpected friendships.",
     "category": "Story",
     "available_quantity": 10,
-    "image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+    "image_url": "https://example.com/images/whispers-night.jpg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "description": "A beginner-friendly introduction to Python programming with exercises and projects.",
     "category": "Tech",
     "available_quantity": 16,
-    "image_url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
+    "image_url": "https://example.com/images/python-beginners.jpg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "description": "Discover how the human brain works and how it shapes our thoughts and emotions.",
     "category": "Science",
     "available_quantity": 8,
-    "image_url": "https://images.unsplash.com/photo-1559757175-5700dde675bc"
+    "image_url": "https://example.com/images/human-brain.jpg"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "description": "A time-travel adventure that changes the fate of an entire civilization.",
     "category": "Story",
     "available_quantity": 6,
-    "image_url": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d"
+    "image_url": "https://example.com/images/echoes-time.jpg"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "description": "Understand the fundamentals of cybersecurity and how to protect digital systems.",
     "category": "Tech",
     "available_quantity": 12,
-    "image_url": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
+    "image_url": "https://example.com/images/cybersecurity-essentials.jpg"
   },
   {
     "id": 12,
@@ -105,6 +105,6 @@
     "description": "A fascinating look into genetics, DNA structure, and modern biotechnology.",
     "category": "Science",
     "available_quantity": 4,
-    "image_url": "https://images.unsplash.com/photo-1532187643603-ba119ca4109e"
+    "image_url": "https://example.com/images/secrets-dna.jpg"
   }
 ]

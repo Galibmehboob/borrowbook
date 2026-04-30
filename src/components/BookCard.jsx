@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 const BookCard = ({ book }) => {
+    console.log(book.image_url);
+
     return (
         <div className="border rounded-xl shadow-md p-4 hover:shadow-xl transition">
             <Image
