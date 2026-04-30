@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Banner = () => {
     return (
-        <section className="bg-gray-100 py-20 px-6">
+        <section className="bg-gray-100 py-20 px-6 rounded-lg">
             <div className="max-w-6xl mx-auto text-center">
 
                 {/* Heading */}
