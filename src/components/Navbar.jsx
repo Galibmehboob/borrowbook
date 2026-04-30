@@ -6,7 +6,7 @@ import Image from "next/image";
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <nav className=" text-white px-6 py-4  ">
+        <nav className=" text-white px-6 py-4 sticky top-0 z-10 ">
             <div className="flex items-center justify-between">
 
 
