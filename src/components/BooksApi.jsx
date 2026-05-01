@@ -4,22 +4,24 @@ import BookCard from './BookCard';
 const BooksApi = async () => {
     const res = await fetch('https://borrowbook-three.vercel.app/data.json')
     const data = await res.json()
-    // console.log(data);
+
     const topBooks = data.slice(0, 4)
 
-    console.log(topBooks);
+
 
     return (
-        <div>
-            <h1 className='text-2xl font-bold mt-5'>Recommended</h1>
+        <div className='w-11/12 mx-auto'>
+            <h1 className='text-4xl font-bold mt-20 mb-5 text-center'>Recommended For You</h1>
+            <div className='border border-b-2 mb-5 border-purple-100 w-6xl mx-auto'></div>
 
-            <div className='grid grid-cols-4 gap-3'>
+            <div className='grid grid-cols-4 gap-3 w-11/12 mx-auto'>
                 {
                     topBooks.map(book =>
                         <BookCard key={book.id} book={book}></BookCard>
                     )
                 }
             </div>
+
         </div>
     );
 };

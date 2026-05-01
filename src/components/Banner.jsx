@@ -1,8 +1,15 @@
 import Link from "next/link";
+import BanIm from "@/assets/book-banner.png"
+import BanImr from "@/assets/fall-book.png"
+import Image from "next/image";
 
 const Banner = () => {
     return (
-        <section className="bg-gray-100 py-20 px-6 rounded-lg">
+        <section className="bg-linear-to-r from-red-100 to-purple-300 py-20 px-6 rounded-lg relative mt-20 mb-10">
+            <Image src={BanIm} alt="banner" className="w-[400px] absolute top-1 -right-30  z-10"></Image>
+            <Image src={BanImr} alt="banner" className="w-[400px] absolute -bottom-16 -left-2 z-10 "></Image>
+
+
             <div className="max-w-6xl mx-auto text-center">
 
                 {/* Heading */}

@@ -51,7 +51,7 @@ const Footer = () => {
 
             {/* Bottom */}
             <div className="text-center text-sm text-gray-500 mt-8 border-t border-gray-700 pt-4">
-                © {new Date().getFullYear()} MyLogo. All rights reserved.
+                © {new Date().getFullYear()} Biko Book. All rights reserved.
             </div>
         </footer>
     );

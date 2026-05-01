@@ -6,7 +6,7 @@ import Image from "next/image";
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <nav className=" text-white px-6 py-4 sticky top-0 z-10 ">
+        <nav className="sticky top-0 z-50 px-6  text-white bg-white/70 backdrop-blur-md">
             <div className="flex items-center justify-between">
 
 
@@ -16,12 +16,12 @@ const Navbar = () => {
 
                         loading="eager"
                         alt="logo"
-                        width={70}
-                        height={70}
+                        width={60}
+                        height={60}
                     >
 
                     </Image>
-                    <h3 className="text-xl text-red-500 font-bold ">Biko <br /> Book</h3>
+                    <h3 className="text-md text-red-500 font-bold ">Biko <br /> Book</h3>
                 </div>
 
                 {/* Center - Desktop Menu */}
