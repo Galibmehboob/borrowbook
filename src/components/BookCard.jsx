@@ -1,5 +1,6 @@
 import { Button, Chip } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const BookCard = ({ book }) => {
 
@@ -17,7 +18,12 @@ const BookCard = ({ book }) => {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className=" object-cover rounded-xl shadow-lg"
                     />
-                    <Chip size="sm" className="absolute right-2 top-1 ">{book.category}</Chip>
+                    <Chip
+                        size="sm"
+                        className="absolute right-2 top-1 bg-black/30 backdrop-blur-md border border-white/20 text-white"
+                    >
+                        {book.category}
+                    </Chip>
                 </div>
             </div>
 
@@ -27,9 +33,9 @@ const BookCard = ({ book }) => {
                 {book.description}
             </p>
 
-            <Button variant="outline" className="mt-4 w-full font-bold   py-2 rounded-lg hover:bg-blue-600 hover:text-white">
+            <Link href={`/allBooks/${book.id}`}><Button variant="outline" className="mt-4 w-full font-bold   py-2 rounded-lg hover:bg-purple-400 hover:text-white">
                 View Details
-            </Button>
+            </Button></Link>
         </div>
     );
 };

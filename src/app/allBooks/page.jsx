@@ -15,7 +15,7 @@ const AllBooks = async () => {
 
             <h2>All Books</h2>
 
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid lg:grid-cols-4 gap-4">
                 {
                     books.map(book => <BookCard key={book.id} book={book}></BookCard>)
                 }
