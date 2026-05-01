@@ -78,7 +78,7 @@
     "description": "Discover how the human brain works and how it shapes our thoughts and emotions.",
     "category": "Science",
     "available_quantity": 8,
-    "image_url": "/Image/human-brain.jpg"
+    "image_url": "/Image/the-human-brain.jpg"
   },
   {
     "id": 10,
@@ -91,7 +91,7 @@
   },
   {
     "id": 11,
-    "title": "Cybersecurity Essentials",
+    "title": "Cybersecurity   ",
     "author": "Liam Johnson",
     "description": "Understand the fundamentals of cybersecurity and how to protect digital systems.",
     "category": "Tech",

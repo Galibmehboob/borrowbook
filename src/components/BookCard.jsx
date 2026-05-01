@@ -2,7 +2,7 @@ import { Button, Chip } from "@heroui/react";
 import Image from "next/image";
 
 const BookCard = ({ book }) => {
-    console.log(book);
+
 
 
     return (

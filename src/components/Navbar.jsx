@@ -27,7 +27,7 @@ const Navbar = () => {
                 {/* Center - Desktop Menu */}
                 <div className="hidden md:flex gap-8 text-black">
                     <Link href="/">Home</Link>
-                    <Link href="/books">All Books</Link>
+                    <Link href="/allBooks">All Books</Link>
                     <Link href="/profile">Profile</Link>
                 </div>
 
