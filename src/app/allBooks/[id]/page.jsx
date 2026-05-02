@@ -12,7 +12,6 @@ const BooksDetails = async ({ params }) => {
 
     const book = books.find(p => p.id == id)
 
-    console.log(book);
 
 
     return (

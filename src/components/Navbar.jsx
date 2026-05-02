@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@heroui/react";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -32,10 +33,15 @@ const Navbar = () => {
                 </div>
 
 
-                <div className="hidden md:block">
-                    <button className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
-                        Sign In
-                    </button>
+                <div className=" hidden md:block">
+                    <div className=" flex  gap-3">
+                        <Link href="/signin"><Button className="bg-[#b90050] px-4 py-2 rounded hover:bg-[#cc0058]">
+                            Sign In
+                        </Button></Link>
+                        <Link href="/signup"><Button className="bg-[#b90050] px-4 py-2 rounded hover:bg-[#cc0058]">
+                            Sign Up
+                        </Button></Link>
+                    </div>
                 </div>
 
 
@@ -52,9 +58,12 @@ const Navbar = () => {
                     <Link href="/">Home</Link>
                     <Link href="/books">All Books</Link>
                     <Link href="/profile">Profile</Link>
-                    <button className="bg-blue-500 px-4 py-2 rounded text-white">
+                    <Link href="/signin"><Button className="bg-[#b90050] px-4 py-2 rounded hover:bg-[#cc0058]">
                         Sign In
-                    </button>
+                    </Button></Link>
+                    <Link href="/signup"><Button className="bg-[#b90050] px-4 py-2 rounded hover:bg-[#cc0058]">
+                        Sign Up
+                    </Button></Link>
                 </div>
             )}
         </nav>

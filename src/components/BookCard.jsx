@@ -33,7 +33,7 @@ const BookCard = ({ book }) => {
                 {book.description}
             </p>
 
-            <Link href={`/allBooks/${book.id}`}><Button variant="outline" className="mt-4 w-full font-bold   py-2 rounded-lg hover:bg-purple-400 hover:text-white">
+            <Link href={`/allBooks/${book.id}`}><Button variant="outline" className="mt-4 w-full font-bold   py-2 rounded-lg hover:bg-[#cc0058] hover:text-white">
                 View Details
             </Button></Link>
         </div>
