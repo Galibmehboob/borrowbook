@@ -1,32 +1,26 @@
 "use client"
 import { authClient } from "@/lib/auth-client";
-import { Check } from "@gravity-ui/icons";
+import { ArrowRightToSquare } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
-import { useRouter } from "next/navigation";
 
-
-
-const SignUpPage = () => {
-    const router = useRouter()
-
+const SignInPage = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
         console.log(userData);
 
-        const { data, error } = await authClient.signUp.email({
-            name: userData.name,
+        const { data, error } = await authClient.signIn.email({
+
             email: userData.email,
-            image: userData.image,
+
             password: userData.password,
+
+            callbackURL: '/'
         })
 
         console.log("sign Up Response", data, error);
 
-        if (!error) {
-            router.push("/signin")
-        }
 
     };
 
@@ -35,29 +29,13 @@ const SignUpPage = () => {
             <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl border">
 
                 <h2 className="mb-6 text-center text-3xl font-bold text-gray-800">
-                    Sign Up
+                    Sign In
                 </h2>
 
                 <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
 
 
-                    <TextField
-                        isRequired
-                        name="name"
-                        type="text"
-                    >
-                        <Label className="mb-1 block text-sm font-medium text-gray-700">
-                            Name
-                        </Label>
 
-                        <Input
-                            name="name"
-                            placeholder="John Doe"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-                        />
-
-                        <FieldError />
-                    </TextField>
 
 
                     <TextField
@@ -87,23 +65,7 @@ const SignUpPage = () => {
                     </TextField>
 
 
-                    <TextField
-                        isRequired
-                        name="image"
-                        type="url"
-                    >
-                        <Label className="mb-1 block text-sm font-medium text-gray-700">
-                            Image URL
-                        </Label>
 
-                        <Input
-                            name="image"
-                            placeholder="https://example.com/photo.jpg"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-                        />
-
-                        <FieldError />
-                    </TextField>
 
 
                     <TextField
@@ -147,8 +109,8 @@ const SignUpPage = () => {
                             type="submit"
                             className="w-full rounded-xl bg-blue-600 py-3 text-white hover:bg-blue-700"
                         >
-                            <Check className="mr-2 h-4 w-4" />
-                            Submit
+                            <ArrowRightToSquare className="mr-2 h-4 w-4" />
+                            Login
                         </Button>
 
                         <Button
@@ -156,7 +118,7 @@ const SignUpPage = () => {
                             variant="secondary"
                             className="w-full rounded-xl py-3"
                         >
-                            Reset
+                            Cancel
                         </Button>
                     </div>
                 </Form>
@@ -165,4 +127,4 @@ const SignUpPage = () => {
     );
 };
 
-export default SignUpPage;
+export default SignInPage;
