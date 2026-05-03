@@ -121,6 +121,9 @@ const SignUpPage = () => {
                             if (!/[0-9]/.test(value)) {
                                 return "Password must contain at least one number";
                             }
+                            if (!/[^A-Za-z0-9]/.test(value)) {
+                                return "Password must contain at least one symbol";
+                            }
                             return null;
                         }}
                     >

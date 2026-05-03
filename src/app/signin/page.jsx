@@ -4,6 +4,9 @@ import { ArrowRightToSquare } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 
 const SignInPage = () => {
+
+    // const [loginError, setLoginError] = useState("");
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -20,6 +23,10 @@ const SignInPage = () => {
         })
 
         console.log("sign Up Response", data, error);
+
+        // if (error) {
+        //     setLoginError("Invalid password");
+        //     return;
 
 
     };
@@ -73,18 +80,7 @@ const SignInPage = () => {
                         minLength={8}
                         name="password"
                         type="password"
-                        validate={(value) => {
-                            if (value.length < 8) {
-                                return "Password must be at least 8 characters";
-                            }
-                            if (!/[A-Z]/.test(value)) {
-                                return "Password must contain at least one uppercase letter";
-                            }
-                            if (!/[0-9]/.test(value)) {
-                                return "Password must contain at least one number";
-                            }
-                            return null;
-                        }}
+
                     >
                         <Label className="mb-1 block text-sm font-medium text-gray-700">
                             Password
@@ -101,6 +97,13 @@ const SignInPage = () => {
                         </Description>
 
                         <FieldError />
+
+                        {/* {loginError && (
+                                <p className="text-sm text-red-500 mt-1">
+                                    {loginError}
+                                </p>
+                            )} */}
+
                     </TextField>
 
 
