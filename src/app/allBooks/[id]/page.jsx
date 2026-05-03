@@ -7,7 +7,7 @@ import { GiLoveHowl } from "react-icons/gi";
 
 const BooksDetails = async ({ params }) => {
     const { id } = await params;
-    const res = await fetch('https://borrowbook-three.vercel.app/data.json')
+    const res = await fetch('http://localhost:3000/data.json')
     const books = await res.json()
 
     const book = books.find(p => p.id == id)
