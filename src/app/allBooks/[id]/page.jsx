@@ -60,17 +60,17 @@ const BooksDetails = async ({ params }) => {
 
                 <div className="mt-6 flex gap-3 justify-around">
                     <div className="  flex gap-3">
-                        <Button className="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-purple-200 hover:text-black transition">
+                        <Button className="px-5 py-2 bg-[#b90050] text-white rounded-lg hover:bg-purple-200 hover:text-black transition">
                             Borrow now
                         </Button>
 
-                        <Button className="px-5 py-2 border border-gray-300 rounded-lg hover:bg-purple-200 hover:text-black transition">
+                        <Button className="px-5 py-2 border bg-[#b90050] border-gray-300 rounded-lg hover:bg-purple-200 hover:text-black transition">
                             Wishlist <CiHeart className=" animate-pulse font-bold " />
                         </Button>
                     </div>
 
                     <div  >
-                        <Link href="/allBooks"><Button className="rounded-xl hover:bg-purple-200 hover:text-black">Back</Button></Link>
+                        <Link href="/allBooks"><Button className="rounded-xl bg-[#b90050] hover:bg-purple-200 hover:text-black">Back</Button></Link>
                     </div>
                 </div>
             </div>

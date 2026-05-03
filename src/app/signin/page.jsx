@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import { ArrowRightToSquare } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+import { GrGoogle } from "react-icons/gr";
 
 const SignInPage = () => {
 
@@ -27,9 +28,16 @@ const SignInPage = () => {
         // if (error) {
         //     setLoginError("Invalid password");
         //     return;
-
-
     };
+
+
+    const handleGoogleSignIn = async () => {
+        await authClient.signIn.social({
+            provider: "google"
+        })
+    }
+
+
 
     return (
         <div className="min-h-screen flex items-center justify-center  px-4 py-10">
@@ -125,6 +133,9 @@ const SignInPage = () => {
                         </Button>
                     </div>
                 </Form>
+                <p className="text-center">Or</p>
+
+                <Button onClick={handleGoogleSignIn} variant="outline" className='w-full'> <GrGoogle></GrGoogle> Sign In With Google</Button>
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="bg-gray-900 text-gray-300 px-6 py-10 mt-10">
             <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
 
-                {/* Logo / Brand */}
+
                 <div>
                     <div className="flex justify-start items-center">
                         <Image
@@ -49,7 +49,7 @@ const Footer = () => {
 
             </div>
 
-            {/* Bottom */}
+
             <div className="text-center text-sm text-gray-500 mt-8 border-t border-gray-700 pt-4">
                 © {new Date().getFullYear()} Biko Book. All rights reserved.
             </div>
