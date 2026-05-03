@@ -1,119 +1,164 @@
-"use client";
-
-
+"use client"
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
-import {
-    Button,
-    Card,
-    Input,
-} from "@heroui/react";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import toast from "react-hot-toast";
+import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 
-export default function SignUpPage() {
-    const router = useRouter();
-    const [loading, setLoading] = useState(false);
 
+
+const SignUpPage = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
+        const formData = new FormData(e.currentTarget);
+        const userData = Object.fromEntries(formData.entries());
+        console.log(userData);
 
-        const form = new FormData(e.currentTarget);
+        const { data, error } = await authClient.signUp.email({
+            name: userData.name,
+            email: userData.email,
+            image: userData.image,
+            password: userData.password,
 
-        const name = form.get("name");
-        const image = form.get("image");
-        const email = form.get("email");
-        const password = form.get("password");
 
-        console.log(name, email, password);
+        })
 
-        if (!name || !email || !password) {
-            toast.error("All required fields must be filled");
-            setLoading(false);
-            return;
-        }
+        console.log("sign Up Response", data, error);
 
-        try {
-            const response = await authClient.signUp.email({
-                name,
-                email,
-                password,
-                image,
-            });
 
-            console.log(response);
-
-            if (response.error) {
-                toast.error(response.error.message || "Registration failed");
-                return;
-            }
-
-            toast.success(`Welcome ${response.data?.user?.name}`);
-
-            router.push("/signin");
-
-        } catch (err) {
-            console.log(err);
-            toast.error("Something went wrong");
-        } finally {
-            setLoading(false);
-        }
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen px-4">
-            <Card className="w-full max-w-md p-6 shadow-lg border">
-                <h1 className="text-center text-2xl font-bold mb-6">
+        <div className="min-h-screen flex items-center justify-center  px-4 py-10">
+            <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl border">
+
+                <h2 className="mb-6 text-center text-3xl font-bold text-gray-800">
                     Sign Up
-                </h1>
+                </h2>
 
-                <form onSubmit={onSubmit} className="flex flex-col gap-4">
+                <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
 
-                    <Input
+
+                    <TextField
+                        isRequired
                         name="name"
-                        label="Name"
-                        placeholder="Enter your name"
-                    />
+                        type="text"
+                    >
+                        <Label className="mb-1 block text-sm font-medium text-gray-700">
+                            Name
+                        </Label>
 
-                    <Input
-                        name="image"
-                        label="Photo URL"
-                        placeholder="Image URL"
-                    />
+                        <Input
+                            name="name"
+                            placeholder="John Doe"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+                        />
 
-                    <Input
+                        <FieldError />
+                    </TextField>
+
+
+                    <TextField
+                        isRequired
                         name="email"
                         type="email"
-                        label="Email"
-                        placeholder="john@example.com"
-                    />
+                        validate={(value) => {
+                            if (
+                                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)
+                            ) {
+                                return "Please enter a valid email address";
+                            }
+                            return null;
+                        }}
+                    >
+                        <Label className="mb-1 block text-sm font-medium text-gray-700">
+                            Email
+                        </Label>
 
-                    <Input
+                        <Input
+                            name="email"
+                            placeholder="john@example.com"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+                        />
+
+                        <FieldError />
+                    </TextField>
+
+
+                    <TextField
+                        isRequired
+                        name="image"
+                        type="url"
+                    >
+                        <Label className="mb-1 block text-sm font-medium text-gray-700">
+                            Image URL
+                        </Label>
+
+                        <Input
+                            name="image"
+                            placeholder="https://example.com/photo.jpg"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+                        />
+
+                        <FieldError />
+                    </TextField>
+
+
+                    <TextField
+                        isRequired
+                        minLength={8}
                         name="password"
                         type="password"
-                        label="Password"
-                        placeholder="Enter password"
-                    />
+                        validate={(value) => {
+                            if (value.length < 8) {
+                                return "Password must be at least 8 characters";
+                            }
+                            if (!/[A-Z]/.test(value)) {
+                                return "Password must contain at least one uppercase letter";
+                            }
+                            if (!/[0-9]/.test(value)) {
+                                return "Password must contain at least one number";
+                            }
+                            return null;
+                        }}
+                    >
+                        <Label className="mb-1 block text-sm font-medium text-gray-700">
+                            Password
+                        </Label>
 
-                    <div className="flex gap-2 mt-2">
+                        <Input
+                            name="password"
+                            placeholder="Enter your password"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+                        />
+
+                        <Description className="mt-1 text-sm text-gray-500">
+                            Must be at least 8 characters with 1 uppercase and 1 number
+                        </Description>
+
+                        <FieldError />
+                    </TextField>
+
+
+                    <div className="flex flex-col gap-3 sm:flex-row">
                         <Button
                             type="submit"
-                            color="primary"
-                            isLoading={loading}
+                            className="w-full rounded-xl bg-blue-600 py-3 text-white hover:bg-blue-700"
                         >
-                            <Check width={18} height={18} />
+                            <Check className="mr-2 h-4 w-4" />
                             Submit
                         </Button>
 
-                        <Button type="reset" variant="bordered">
+                        <Button
+                            type="reset"
+                            variant="secondary"
+                            className="w-full rounded-xl py-3"
+                        >
                             Reset
                         </Button>
                     </div>
-
-                </form>
-            </Card>
+                </Form>
+            </div>
         </div>
     );
-}
+};
+
+export default SignUpPage;
